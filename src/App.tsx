@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
@@ -19,7 +19,7 @@ export const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-cream-50 text-dark-900 font-sans antialiased">
+      <div className="min-h-screen flex flex-col bg-alabaster-50 text-dark-900 font-sans antialiased">
         <Navbar />
         <main className="flex-grow">
           <Routes>
