@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #fbf9f5;
+    color: #0e1412;
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, .font-serif-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f2ec;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d3327;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #061d16;
+}
+
+/* Glassmorphism effects */
+.glass-panel {
+  background: rgba(251, 249, 245, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-dark {
+  background: rgba(13, 51, 39, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-gold {
+  background: rgba(197, 160, 89, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* Architectural Grid Texture */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(13, 51, 39, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 51, 39, 0.03) 1px, transparent 1px);
+}
+
+.bg-grid-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Plot state styling - Blueprint edition */
+.plot-available {
+  @apply bg-emerald-50/90 border-emerald-300 text-emerald-950 hover:bg-emerald-100 hover:border-emerald-500 hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+}
+
+.plot-reserved {
+  @apply bg-amber-50/90 border-amber-300 text-amber-950 opacity-95 hover:bg-amber-100 hover:border-amber-400 transition-all duration-200;
+}
+
+.plot-sold {
+  @apply bg-slate-100/90 border-slate-200 text-slate-400 cursor-not-allowed opacity-75 grayscale-[20%];
+}
